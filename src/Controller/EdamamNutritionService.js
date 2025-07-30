@@ -9,7 +9,7 @@ export const fetchNutritionFromGemini = async (req, res) => {
         const genAI = new GoogleGenerativeAI(apiKey);
 
         const model = genAI.getGenerativeModel({
-            model: "gemini-1.5-flash",
+            model: "gemini-2.5-flash",
         });
 
         const prompt = `
@@ -38,7 +38,7 @@ export const fetchNutritionFromGemini = async (req, res) => {
         const text = response.text();
         console.log(text);
 
-        return req.status(200).json({
+        return res.status(200).json({
             success: true,
             data: text,
             message: 'Nutrition categories fetched successfully'

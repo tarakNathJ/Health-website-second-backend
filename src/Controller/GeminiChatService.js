@@ -262,7 +262,7 @@ export const createGeminiChatSession = async (req, res) => {
             chatSections[sessionId] = {
                 chatSession: chatSession,
                 modelType: modelType,
-                time: Date.now() + (10 * 60 * 1000)
+                time: Date.now() + (30 * 60 * 1000)
             };
 
             return res.status(200).json({
